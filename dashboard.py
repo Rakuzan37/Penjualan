@@ -6,7 +6,7 @@ import plotly.express as px
 
 st.title("Dashboard Penjualan")
 
-data = pd.read_csv("https://docs.google.com/spreadsheets/d/17pJFUizbgtInkDCRS1TNvFLXxv9s3QwofdvQGghE97I/export?format=csv")
+data = pd.read_csv("https://docs.google.com/spreadsheets/d/1J4hWcDJ3mQmB6H0-ai1iy8nxJfygEnP0jFd0y_5dDPU/export?format=csv")
 data["Tanggal"] = pd.to_datetime(data["Tanggal"])
 
 data_growth = data.set_index("Tanggal").pct_change().reset_index()
@@ -72,3 +72,6 @@ st.plotly_chart(fig_bar)
 
 fig_bar = px.bar(top_3_growth, x="Lapak", y="Pertumbuhan", title="Top 3 Pertumbuhan Penghasilan Lapak", labels={"Pertumbuhan": "Pertumbuhan (%)"})
 st.plotly_chart(fig_bar)
+
+
+
